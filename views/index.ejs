@@ -1,0 +1,215 @@
+<div class="pagetitle">
+  <h1>Dashboard</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item active">Dashboard</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+
+<section class="section dashboard">
+  <div class="row">
+    <!-- Left column -->
+    <div class="col-lg-8">
+      <div class="row">
+        <div class="col-6">
+          <div class="card top-selling overflow-auto">
+
+            <div class="card-body pb-0">
+              <h5 class="card-title">Alert History</h5>
+              <table class="table table-borderless">
+                <thead>
+                  <tr>
+                    <th scope="col">Sensor ID</th>
+                    <th scope="col">Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="fw-bold">D001</td>
+                    <td>March 7th 2022, 4:52:01 PM</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">D001</td>
+                    <td>March 7th 2022, 4:52:01 PM</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">D001</td>
+                    <td>March 7th 2022, 4:52:01 PM</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">D001</td>
+                    <td>March 7th 2022, 4:52:01 PM</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">D001</td>
+                    <td>March 7th 2022, 4:52:01 PM</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">D001</td>
+                    <td>March 7th 2022, 4:52:01 PM</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">D001</td>
+                    <td>March 7th 2022, 4:52:01 PM</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">D001</td>
+                    <td>March 7th 2022, 4:52:01 PM</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">D001</td>
+                    <td>March 7th 2022, 4:52:01 PM</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">D001</td>
+                    <td>March 7th 2022, 4:52:01 PM</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">D001</td>
+                    <td>March 7th 2022, 4:52:01 PM</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">D001</td>
+                    <td>March 7th 2022, 4:52:01 PM</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">D001</td>
+                    <td>March 7th 2022, 4:52:01 PM</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">D001</td>
+                    <td>March 7th 2022, 4:52:01 PM</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">D001</td>
+                    <td>March 7th 2022, 4:52:01 PM</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">D001</td>
+                    <td>March 7th 2022, 4:52:01 PM</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card top-selling overflow-auto">
+
+            <div class="card-body pb-0">
+              <h5 class="card-title">Sensor Status</h5>
+              <table class="table table-borderless">
+                <thead>
+                  <tr>
+                    <th scope="col">Sensor ID</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% console.log(sensors); %>
+                  <% sensors.forEach(sensor => { %>
+                  <tr>
+                    <td class="fw-bold"><%= sensor.id %></td>
+                    <% if(sensor.status == 0){ %>
+                      <td>Open</td>
+                    <% }else{ %>
+                      <td>Closed</td>
+                    <% } %>
+                  </tr>
+                  <% }); %>
+                </tbody>
+              </table>
+
+            </div>
+
+          </div>
+        </div><!-- End Top Selling -->
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="card info-card sales-card">
+        <div class="card-body">
+          <h5 class="card-title">Alert Mode</h5>
+          <div class="d-flex align-items-center">
+            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+              <i class="bi bi-alarm"></i>
+            </div>
+            <div class="ps-3">
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="card info-card sales-card">
+        <%
+        function Closed(status) {
+          return status == 1;
+        }
+        %>
+        <div class="card-body">
+          <h5 class="card-title">House Status</h5>
+          <div class="d-flex align-items-center">
+            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <div class="ps-3">
+              <% if(sensors.every(Closed)){ %>
+                <h6>Safe</h6>
+                <span class="text-muted small pt-2 ps-1">All doors are closed</span>
+              <% }else{ %>
+                <h6>Not safe</h6>
+                <span class="text-muted small pt-2 ps-1">Some doors are open</span>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card info-card sales-card">
+        <div class="card-body">
+          <h5 class="card-title">Buzzer</h5>
+          <div class="d-flex align-items-center">
+            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+              <i class="bi bi-megaphone"></i>
+            </div>
+            <div class="ps-3">
+              <% if(sensors.every(Closed)){ %>
+                <h6>Off</h6>
+              <span class="text-muted small pt-2 ps-1">All buzzers are off</span>
+              <% }else{ %>
+                <h6>On</h6>
+              <span class="text-muted small pt-2 ps-1">All buzzers are on</span>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card info-card sales-card">
+        <div class="card-body">
+          <h5 class="card-title">LED Light</h5>
+          <div class="d-flex align-items-center">
+            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+              <i class="bi bi-lightbulb"></i>
+            </div>
+            <div class="ps-3">
+              <% if(sensors.every(Closed)){ %>
+                <h6>Off</h6>
+              <span class="text-muted small pt-2 ps-1">All LED lights are off</span>
+              <% }else{ %>
+                <h6>On</h6>
+              <span class="text-muted small pt-2 ps-1">All LED lights are on</span>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
