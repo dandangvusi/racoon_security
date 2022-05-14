@@ -2,7 +2,7 @@
 const mongoose = require('mongoose'),
 {Schema} = mongoose;
 
-var sensorSchema = new Schema(
+var buzzerSchema = new Schema(
     {
         id: {type: String, required: true, unique: true},
         status: {type: Number}
@@ -12,4 +12,4 @@ var sensorSchema = new Schema(
     }
 );
 
-module.exports = mongoose.model("Sensor", sensorSchema);
+module.exports = mongoose.model("Buzzer", buzzerSchema);
