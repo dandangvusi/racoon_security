@@ -19,8 +19,6 @@ module.exports = {
             clean: true,
             port: 1883,
             connectTimeout: 4000,
-           /*  username: 'dan_dang',
-            password: 'aio_KWDx40oG4Co8vyxynKWIGdluWdet', */
             reconnectPeriod: 1000,
         });
 
@@ -60,8 +58,6 @@ module.exports = {
             clean: true,
             port: 1883,
             connectTimeout: 4000,
-           /*  username: 'dan_dang',
-            password: 'aio_KWDx40oG4Co8vyxynKWIGdluWdet', */
             reconnectPeriod: 1000,
         });
         client.publish(topic2, req.body.ledStatus, { qos: 0, retain: false }, (error) => {
@@ -77,8 +73,6 @@ module.exports = {
             clean: true,
             port: 1883,
             connectTimeout: 4000,
-            /* username: 'dan_dang',
-            password: 'aio_KWDx40oG4Co8vyxynKWIGdluWdet', */
             reconnectPeriod: 1000,
         });
         client.publish(topic3, req.body.buzzerStatus, { qos: 0, retain: false }, (error) => {
