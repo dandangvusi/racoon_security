@@ -12,4 +12,5 @@ var sensorSchema = new Schema(
     }
 );
 
+
 module.exports = mongoose.model("Sensor", sensorSchema);

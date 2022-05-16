@@ -11,4 +11,6 @@ var alertMode = new Schema(
     }
 );
 
+
+
 module.exports = mongoose.model("Mode", alertMode);

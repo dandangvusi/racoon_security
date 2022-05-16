@@ -82,6 +82,8 @@ client.on('message', (topic, message) => {
 });
 
 router.get("/", homeController.index, homeController.indexView);
+
+
 router.put("/update_view", homeController.update, homeController.index, homeController.indexView);
 
 app.listen(app.get("port"), () => {
