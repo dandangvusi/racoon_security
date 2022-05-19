@@ -15,6 +15,11 @@ function prgMqtt() {
         clean: true,
         port: 1883,
         connectTimeout: 4000,
+<<<<<<< HEAD
+        username: 'dan_dang',
+        password: 'aio_KWDx40oG4Co8vyxynKWIGdluWdet',
+=======
+>>>>>>> df1cbf6e7b7b5f31fd94d245144dee5d1d27f405
         reconnectPeriod: 1000,
     });
     client.on('connect', () => {
