@@ -107,7 +107,7 @@ module.exports = {
             if (error) {
               console.error(error)
             }
-            console.log('Send Message: ', req.body.ledStatus, topic2);
+            console.log('Send Messages: ', req.body.ledStatus, topic2);
             next();
         });
     },
